@@ -1,10 +1,10 @@
 /* --- 1. GLOBAL VARIABLES & RESET --- */
 :root {
     --primary-bg: #ffffff;
-    --alt-bg: #f4f4f9; /* Very light gray/blue for alternating sections */
-    --text-main: #333333; /* Dark charcoal, softer than pure black */
-    --accent-color: #1A365D; /* Professional Navy Blue */
-    --accent-hover: #2c5282; /* Lighter blue for hover effects */
+    --alt-bg: #f4f4f9; 
+    --text-main: #333333; 
+    --accent-color: #1A365D; 
+    --accent-hover: #2c5282; 
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Lato', sans-serif;
 }
@@ -16,8 +16,8 @@
 }
 
 html {
-    scroll-behavior: smooth; /* Makes clicking nav links scroll smoothly */
-    scroll-padding-top: 80px; /* Prevents section titles from hiding under the fixed navbar */
+    scroll-behavior: smooth; 
+    scroll-padding-top: 80px; 
 }
 
 body {
@@ -30,11 +30,11 @@ body {
 /* --- 2. NAVIGATION BAR --- */
 header {
     background-color: var(--primary-bg);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Subtle shadow under the nav */
-    position: fixed; /* Keeps the nav at the top when scrolling */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+    position: fixed; 
     width: 100%;
     top: 0;
-    z-index: 1000; /* Ensures nav stays on top of all other content */
+    z-index: 1000; 
 }
 
 .navbar {
@@ -44,6 +44,11 @@ header {
     max-width: 1200px;
     margin: 0 auto;
     padding: 1rem 2rem;
+}
+
+/* FIX: Ensures your name stays strictly on the left */
+.logo {
+    text-align: left;
 }
 
 .logo a {
@@ -57,7 +62,7 @@ header {
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 1.5rem; /* Slightly reduced gap to fit the new menu item */
 }
 
 .nav-links a {
@@ -69,7 +74,6 @@ header {
     position: relative;
 }
 
-/* Adds a nice underline effect when hovering over links */
 .nav-links a:hover {
     color: var(--accent-color);
 }
@@ -91,8 +95,8 @@ header {
 
 /* --- 3. SECTIONS & LAYOUT --- */
 .section {
-    min-height: 80vh; /* Makes sections tall enough to require scrolling */
-    padding: 6rem 2rem; /* Extra padding at the top so content doesn't hide under the fixed nav */
+    min-height: 80vh; 
+    padding: 6rem 2rem; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -108,25 +112,39 @@ header {
     margin: 0 auto;
 }
 
+/* FIX: Headers are now left-aligned with a professional accent line */
 h2 {
     font-family: var(--font-heading);
     font-size: 2.5rem;
     color: var(--accent-color);
     margin-bottom: 1.5rem;
-    text-align: center;
+    text-align: left; /* CHANGED to left */
+    position: relative;
+    padding-bottom: 10px;
 }
 
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+
+/* FIX: Paragraphs are now left-aligned for easy reading */
 p {
     font-size: 1.1rem;
     margin-bottom: 1rem;
-    text-align: center;
+    text-align: left; /* CHANGED to left */
 }
 
 /* --- 4. HERO SECTION SPECIFICS --- */
 .hero-section {
     background-color: var(--primary-bg);
-    text-align: center;
-    padding-top: 10rem; /* Pushes hero content down below the fixed nav */
+    text-align: left; /* CHANGED to left */
+    padding-top: 10rem; 
 }
 
 .hero-section h1 {
@@ -135,6 +153,7 @@ p {
     color: var(--accent-color);
     margin-bottom: 1rem;
     line-height: 1.2;
+    text-align: left; /* CHANGED to left */
 }
 
 .subtitle {
@@ -142,6 +161,7 @@ p {
     color: #666;
     margin-bottom: 2rem;
     font-weight: 300;
+    text-align: left; /* CHANGED to left */
 }
 
 .btn {
