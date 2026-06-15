@@ -835,3 +835,64 @@ footer p {
 .portfolio-content::-webkit-scrollbar-thumb:hover {
     background: var(--accent-deep);
 }
+/* --- SOCIAL MEDIA LINKS STYLING --- */
+.social-links-container {
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.social-links-container h4 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-main);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.9rem 1.8rem;
+    background: var(--primary-bg);
+    color: var(--text-main);
+    text-decoration: none;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.social-icon {
+    width: 22px;
+    height: 22px;
+    transition: transform 0.3s ease;
+}
+
+/* Telegram Hover State */
+.social-link.telegram:hover {
+    background: #0088cc; /* Official Telegram Blue */
+    color: white;
+    border-color: #0088cc;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 136, 204, 0.3);
+}
+
+/* VK Hover State */
+.social-link.vk:hover {
+    background: #0077FF; /* Official VK Blue */
+    color: white;
+    border-color: #0077FF;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 119, 255, 0.3);
+}
+
+.social-link:hover .social-icon {
+    transform: scale(1.1);
+}
