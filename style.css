@@ -480,11 +480,23 @@ header {
     align-items: start;
 }
 
-.about-image img {
-    width: 100%;
-    border-radius: 8px;
+/* UPDATED: Matches the reviews.jpg styling perfectly */
+.about-image {
+    border-radius: 12px;
+    overflow: hidden;
     box-shadow: 0 8px 25px rgba(0,0,0,0.1);
     border: 1px solid var(--border-color);
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.about-image:hover img {
+    transform: scale(1.02);
 }
 
 .about-text h3 {
