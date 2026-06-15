@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+here is my code now. ix it for handout2 (handout2.jpeg) and learning project (learning_project.html). <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -87,39 +87,46 @@
                     </div>
                 </section>
 
-                <!-- FIXED: Added closing </iframe> tag here -->
                 <section id="vocab-la" class="portfolio-section">
                     <h2 class="portfolio-section-title">Vocabulary Language Analysis</h2>
                     <div class="document-viewer">
-                        <iframe src="vocab_la.html" title="Vocabulary Language Analysis"></iframe>
+                        <iframe src="vocab_la.html" alt="Vocabulary Language Analysis">
                         <a href="vocab_la.html" target="_blank" class="open-document-btn">Open in New Tab →</a>
                     </div>
                 </section>
 
-                <section id="learning-project" class="portfolio-section">
-                    <h2 class="portfolio-section-title">Self-Designed Learning Project</h2>
-                    <p class="section-intro" style="margin-bottom: 2rem;">Comprehensive documentation and structure of the self-designed learning project.</p>
-                    <div class="document-viewer">
-                        <iframe src="learning_project.html" title="Learning Project"></iframe>
-                        <a href="learning_project.html" target="_blank" class="open-document-btn">Open in New Tab →</a>
-                    </div>
-                </section>
+                <!-- LEARNING PROJECT (Single HTML File) -->
+<section id="learning-project" class="portfolio-section">
+    <h2 class="portfolio-section-title">Self-Designed Learning Project</h2>
+    <p class="section-intro" style="margin-bottom: 2rem;">Comprehensive documentation and structure of the self-designed learning project.</p>
+    <div class="document-viewer">
+        <iframe src="learning_project.html" title="Learning Project" onerror="console.log('Iframe failed to load')"></iframe>
+        <a href="learning_project.html" target="_blank" class="open-document-btn">Open in New Tab →</a>
+    </div>
+    <!-- Fallback if iframe doesn't work -->
+    <div style="margin-top: 2rem; text-align: center;">
+        <p style="color: var(--text-light); margin-bottom: 1rem;">If the document above doesn't display properly:</p>
+        <a href="learning_project.html" target="_blank" class="btn-primary">View Full Document</a>
+    </div>
+</section>
 
-                <section id="handout" class="portfolio-section">
-                    <h2 class="portfolio-section-title">Learning Project Handouts</h2>
-                    <p class="section-intro" style="margin-bottom: 2rem;">Visual materials and supplementary handouts designed for the learning project.</p>
-                    <div class="portfolio-gallery">
-                        <div class="gallery-item">
-                            <img src="handout.jpeg" alt="Handout Page 1">
-                            <a href="handout.jpeg" target="_blank" class="download-btn" download>View / Download ↓</a>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="handout2.jpeg" alt="Handout Page 2">
-                            <a href="handout2.jpeg" target="_blank" class="download-btn" download>View / Download ↓</a>
-                        </div>
-                    </div>
-                </section>
+                <!-- HANDOUTS (Multiple Images Grouped) -->
+<section id="handout" class="portfolio-section">
+    <h2 class="portfolio-section-title">Learning Project Handouts</h2>
+    <p class="section-intro" style="margin-bottom: 2rem;">Visual materials and supplementary handouts designed for the learning project.</p>
+    <div class="portfolio-gallery">
+        <div class="gallery-item">
+            <img src="handout.jpeg" alt="Handout Page 1" onerror="this.src='handout.jpg'; console.log('Trying handout.jpg')">
+            <a href="handout.jpeg" target="_blank" class="download-btn" download>View / Download ↓</a>
+        </div>
+        <div class="gallery-item">
+            <img src="handout2_jpeg" alt="Handout Page 2" onerror="this.src='handout2.jpeg'; console.log('Trying handout2.jpeg')">
+            <a href="handout2_jpeg" target="_blank" class="download-btn" download>View / Download ↓</a>
+        </div>
+    </div>
+</section>
 
+                <!-- EXTRA-CURRICULUM EVENT (Multiple Images Grouped) -->
                 <section id="event-design" class="portfolio-section">
                     <h2 class="portfolio-section-title">Self-Designed Extra-Curriculum Event</h2>
                     <p class="section-intro" style="margin-bottom: 2rem;">Comprehensive design materials, posters, and visual assets for the extra-curriculum event.</p>
@@ -198,18 +205,7 @@
         </div>
     </div>
 
-        <!-- NEW: LESSON LIGHTBOX MODAL -->
-    <div id="lesson-modal">
-        <div class="lesson-modal-container">
-            <button id="close-lesson-modal">&times;</button>
-            <div class="lesson-modal-content">
-                <img id="lesson-modal-img" src="" alt="Lesson Image">
-                <h3 id="lesson-modal-title"></h3>
-                <p id="lesson-modal-desc"></p>
-            </div>
-        </div>
-    </div>
-    
+    <main>
         <!-- HOME SECTION -->
         <section id="home" class="hero">
             <div class="hero-content">
@@ -290,7 +286,6 @@
                         <p>One concrete example illustrating my approach involves an adult learner needing business English. Instead of a generic textbook, we analyzed authentic emails from her workplace, role-played video calls using Miro for collaborative note-taking, and studied intercultural communication. She later told me this helped her navigate a tense negotiation with a German partner. These outcomes have reinforced my belief that authenticity, personalization, and emotional safety are not luxuries but necessities.</p>
                     </div>
 
-                    <div class="philosophy-block">
                         <h4>Conclusion</h4>
                         <p>My educational philosophy centers on building bridges: between teacher and student, between language and culture, and between effort and authentic communication. I remain committed to continuous learning, reflective practice, and the simple but profound belief that every student deserves to feel seen, heard, and capable in their language journey.</p>
                     </div>
@@ -380,9 +375,8 @@
                             <div class="contact-item">
                                 <strong>Location:</strong>
                                 <span>Saint Petersburg, Russia</span>
-                            </div> <!-- FIXED: Added missing closing div -->
                         </div>
-
+                  <!-- NEW: SOCIAL MEDIA LINKS -->
                         <div class="social-links-container">
                             <h4>Connect with me</h4>
                             <div class="social-links">
@@ -416,9 +410,8 @@
         <p>English language educator</p>
     </footer>
 
-    <!-- JavaScript -->
-       <script>
-        // --- PORTFOLIO MODAL LOGIC ---
+    <!-- Portfolio JavaScript -->
+    <script>
         const portfolioBtn = document.getElementById('portfolio-btn');
         const portfolioModal = document.getElementById('portfolio-modal');
         const closePortfolio = document.getElementById('close-portfolio');
@@ -426,29 +419,23 @@
         const portfolioSections = document.querySelectorAll('.portfolio-section');
         const portfolioContent = document.querySelector('.portfolio-content');
 
-        if(portfolioBtn) {
-            portfolioBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                portfolioModal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
-        }
+        portfolioBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            portfolioModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
 
-        if(closePortfolio) {
-            closePortfolio.addEventListener('click', () => {
+        closePortfolio.addEventListener('click', () => {
+            portfolioModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        portfolioModal.addEventListener('click', (e) => {
+            if (e.target === portfolioModal) {
                 portfolioModal.classList.remove('active');
                 document.body.style.overflow = 'auto';
-            });
-        }
-
-        if(portfolioModal) {
-            portfolioModal.addEventListener('click', (e) => {
-                if (e.target === portfolioModal) {
-                    portfolioModal.classList.remove('active');
-                    document.body.style.overflow = 'auto';
-                }
-            });
-        }
+            }
+        });
 
         portfolioLinks.forEach(link => {
             link.addEventListener('click', function(e) {
@@ -472,60 +459,13 @@
             });
         });
 
-        // --- NEW: GUARANTEED LESSON LIGHTBOX LOGIC ---
-        const lessonCards = document.querySelectorAll('.lesson-card');
-        const lessonModal = document.getElementById('lesson-modal');
-        const closeLessonModal = document.getElementById('close-lesson-modal');
-        const lessonModalImg = document.getElementById('lesson-modal-img');
-        const lessonModalTitle = document.getElementById('lesson-modal-title');
-        const lessonModalDesc = document.getElementById('lesson-modal-desc');
-
-        lessonCards.forEach(card => {
-            card.addEventListener('click', function() {
-                const imgSrc = this.querySelector('img').src;
-                const title = this.querySelector('h3').textContent;
-                const desc = this.querySelector('p').textContent;
-
-                if(lessonModalImg && lessonModalTitle && lessonModalDesc) {
-                    lessonModalImg.src = imgSrc;
-                    lessonModalTitle.textContent = title;
-                    lessonModalDesc.textContent = desc;
-                }
-
-                if(lessonModal) {
-                    lessonModal.classList.add('active');
-                    document.body.style.overflow = 'hidden';
-                }
-            });
-        });
-
-        if(closeLessonModal) {
-            closeLessonModal.addEventListener('click', () => {
-                lessonModal.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            });
-        }
-
-        if(lessonModal) {
-            lessonModal.addEventListener('click', (e) => {
-                if (e.target === lessonModal) {
-                    lessonModal.classList.remove('active');
-                    document.body.style.overflow = 'auto';
-                }
-            });
-        }
-
-        // --- GLOBAL ESCAPE KEY ---
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                if (portfolioModal && portfolioModal.classList.contains('active')) {
-                    portfolioModal.classList.remove('active');
-                    document.body.style.overflow = 'auto';
-                }
-                if (lessonModal && lessonModal.classList.contains('active')) {
-                    lessonModal.classList.remove('active');
-                    document.body.style.overflow = 'auto';
-                }
+            if (e.key === 'Escape' && portfolioModal.classList.contains('active')) {
+                portfolioModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
             }
         });
     </script>
+
+</body>
+</html>
