@@ -198,10 +198,10 @@
         </div>
     </div>
 
-    <!-- NEW: LESSON LIGHTBOX MODAL -->
-    <div id="lesson-modal" class="modal-overlay">
+        <!-- NEW: LESSON LIGHTBOX MODAL -->
+    <div id="lesson-modal">
         <div class="lesson-modal-container">
-            <button class="close-modal" id="close-lesson-modal">&times;</button>
+            <button id="close-lesson-modal">&times;</button>
             <div class="lesson-modal-content">
                 <img id="lesson-modal-img" src="" alt="Lesson Image">
                 <h3 id="lesson-modal-title"></h3>
@@ -209,8 +209,7 @@
             </div>
         </div>
     </div>
-
-    <main>
+    
         <!-- HOME SECTION -->
         <section id="home" class="hero">
             <div class="hero-content">
@@ -418,7 +417,7 @@
     </footer>
 
     <!-- JavaScript -->
-    <script>
+       <script>
         // --- PORTFOLIO MODAL LOGIC ---
         const portfolioBtn = document.getElementById('portfolio-btn');
         const portfolioModal = document.getElementById('portfolio-modal');
@@ -427,23 +426,29 @@
         const portfolioSections = document.querySelectorAll('.portfolio-section');
         const portfolioContent = document.querySelector('.portfolio-content');
 
-        portfolioBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            portfolioModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
+        if(portfolioBtn) {
+            portfolioBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                portfolioModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        }
 
-        closePortfolio.addEventListener('click', () => {
-            portfolioModal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        });
-
-        portfolioModal.addEventListener('click', (e) => {
-            if (e.target === portfolioModal) {
+        if(closePortfolio) {
+            closePortfolio.addEventListener('click', () => {
                 portfolioModal.classList.remove('active');
                 document.body.style.overflow = 'auto';
-            }
-        });
+            });
+        }
+
+        if(portfolioModal) {
+            portfolioModal.addEventListener('click', (e) => {
+                if (e.target === portfolioModal) {
+                    portfolioModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        }
 
         portfolioLinks.forEach(link => {
             link.addEventListener('click', function(e) {
@@ -467,7 +472,7 @@
             });
         });
 
-        // --- NEW: LESSON LIGHTBOX LOGIC ---
+        // --- NEW: GUARANTEED LESSON LIGHTBOX LOGIC ---
         const lessonCards = document.querySelectorAll('.lesson-card');
         const lessonModal = document.getElementById('lesson-modal');
         const closeLessonModal = document.getElementById('close-lesson-modal');
@@ -476,50 +481,51 @@
         const lessonModalDesc = document.getElementById('lesson-modal-desc');
 
         lessonCards.forEach(card => {
-            card.style.cursor = 'pointer'; // Changes cursor to hand on hover
-            card.addEventListener('click', () => {
-                // Extract data from the clicked card
-                const imgSrc = card.querySelector('img').src;
-                const title = card.querySelector('h3').textContent;
-                const desc = card.querySelector('p').textContent;
+            card.addEventListener('click', function() {
+                const imgSrc = this.querySelector('img').src;
+                const title = this.querySelector('h3').textContent;
+                const desc = this.querySelector('p').textContent;
 
-                // Populate the modal
-                lessonModalImg.src = imgSrc;
-                lessonModalTitle.textContent = title;
-                lessonModalDesc.textContent = desc;
+                if(lessonModalImg && lessonModalTitle && lessonModalDesc) {
+                    lessonModalImg.src = imgSrc;
+                    lessonModalTitle.textContent = title;
+                    lessonModalDesc.textContent = desc;
+                }
 
-                // Open modal
-                lessonModal.classList.add('active');
-                document.body.style.overflow = 'hidden';
+                if(lessonModal) {
+                    lessonModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
             });
         });
 
-        closeLessonModal.addEventListener('click', () => {
-            lessonModal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        });
-
-        lessonModal.addEventListener('click', (e) => {
-            if (e.target === lessonModal) {
+        if(closeLessonModal) {
+            closeLessonModal.addEventListener('click', () => {
                 lessonModal.classList.remove('active');
                 document.body.style.overflow = 'auto';
-            }
-        });
+            });
+        }
 
-        // --- GLOBAL ESCAPE KEY TO CLOSE ALL MODALS ---
+        if(lessonModal) {
+            lessonModal.addEventListener('click', (e) => {
+                if (e.target === lessonModal) {
+                    lessonModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        }
+
+        // --- GLOBAL ESCAPE KEY ---
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
-                if (portfolioModal.classList.contains('active')) {
+                if (portfolioModal && portfolioModal.classList.contains('active')) {
                     portfolioModal.classList.remove('active');
                     document.body.style.overflow = 'auto';
                 }
-                if (lessonModal.classList.contains('active')) {
+                if (lessonModal && lessonModal.classList.contains('active')) {
                     lessonModal.classList.remove('active');
                     document.body.style.overflow = 'auto';
                 }
             }
         });
     </script>
-
-</body>
-</html>
