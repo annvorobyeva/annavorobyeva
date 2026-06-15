@@ -1,68 +1,525 @@
-/* --- LESSON LIGHTBOX MODAL --- */
-.lesson-modal-container {
-    width: 90%;
-    max-width: 900px;
-    max-height: 90vh;
-    background: var(--primary-bg);
-    border-radius: 12px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anna Vorobyeva | English Language Educator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
 
-.lesson-modal-content {
-    overflow-y: auto;
-    padding: 4rem 3rem 3rem 3rem;
-    text-align: center;
-}
+    <!-- NAVIGATION -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">Anna Vorobyeva</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#philosophy">Teaching Philosophy</a></li>
+                <li><a href="#" id="portfolio-btn">Portfolio</a></li>
+                <li><a href="#lessons">My Lessons</a></li>
+                <li><a href="#contact">Contacts</a></li>
+            </ul>
+        </nav>
+    </header>
 
-.lesson-modal-content img {
-    max-width: 100%;
-    max-height: 60vh;
-    object-fit: contain;
-    border-radius: 8px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    margin-bottom: 2rem;
-    background: var(--alt-bg);
-}
+    <!-- PORTFOLIO MODAL/OVERLAY -->
+    <div id="portfolio-modal" class="portfolio-modal">
+        <div class="portfolio-container">
+            <button class="close-portfolio" id="close-portfolio">&times;</button>
+            
+            <aside class="portfolio-sidebar">
+                <h2 class="portfolio-sidebar-title">Portfolio Contents</h2>
+                <nav class="portfolio-nav">
+                    <ul>
+                        <li><a href="#exec-summary" class="portfolio-link active">Executive Summary</a></li>
+                        <li><a href="#reflective-essay" class="portfolio-link">Reflective Essay</a></li>
+                        <li class="portfolio-submenu">
+                            <span class="submenu-header">Language Analyses</span>
+                            <ul>
+                                <li><a href="#grammar-la" class="portfolio-link">Grammar Analysis</a></li>
+                                <li><a href="#vocab-la" class="portfolio-link">Vocabulary Analysis</a></li>
+                            </ul>
+                        </li>
+                        <li class="portfolio-submenu">
+                            <span class="submenu-header">Self-Designed Projects</span>
+                            <ul>
+                                <li><a href="#learning-project" class="portfolio-link">Learning Project</a></li>
+                                <li><a href="#handout" class="portfolio-link">Project Handout</a></li>
+                                <li><a href="#event-design" class="portfolio-link">Extra-Curriculum Event</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#learner-analysis" class="portfolio-link">Learner Analysis</a></li>
+                        <li><a href="#practice-tasks" class="portfolio-link">Language Practice Tasks</a></li>
+                        <li><a href="#authentic-text" class="portfolio-link">Authentic Text Activities</a></li>
+                        <li><a href="#lesson-plan" class="portfolio-link">Lesson Plan</a></li>
+                        <li><a href="#guided-discovery" class="portfolio-link">Guided Discovery Worksheet</a></li>
+                    </ul>
+                </nav>
+            </aside>
 
-.lesson-modal-content h3 {
-    font-family: var(--font-heading);
-    font-size: 2.2rem;
-    font-weight: 600;
-    color: var(--text-main);
-    margin-bottom: 1rem;
-}
+            <main class="portfolio-content">
+                <section id="exec-summary" class="portfolio-section active">
+                    <h2 class="portfolio-section-title">Executive Summary</h2>
+                    <div class="executive-summary-content">
+                        <p>This portfolio serves as a comprehensive record of my development as an English language teacher, offering insight into my growing expertise, pedagogical skills, and dedication to fostering meaningful learning experiences for students of all ages and proficiency levels.</p>
+                        <p>The portfolio brings together a reflective essay, language analyses, self-designed projects, lesson materials. Together, these documents illustrate my analytical approach to language teaching, my creativity in designing engaging tasks, and my ability to adapt methods to diverse learners—from school students preparing for state exams to adults pursuing conversational, academic, or business English.</p>
+                        <p>Above all, this collection reflects my ongoing commitment to professional growth and my passion for creating a supportive, rich learning environment where students feel motivated to achieve their goals.</p>
+                    </div>
+                </section>
 
-.lesson-modal-content p {
-    font-size: 1.15rem;
-    color: var(--text-light);
-    line-height: 1.8;
-    text-align: justify;
-    max-width: 750px;
-    margin: 0 auto;
-}
+                <section id="reflective-essay" class="portfolio-section">
+                    <h2 class="portfolio-section-title">Reflective Essay</h2>
+                    <div class="document-viewer">
+                        <iframe src="essay.html" title="Reflective Essay"></iframe>
+                        <a href="essay.html" target="_blank" class="open-document-btn">Open in New Tab →</a>
+                    </div>
+                </section>
 
-/* --- LESSON CARDS INTERACTIVITY --- */
-.lesson-card {
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-}
+                <section id="grammar-la" class="portfolio-section">
+                    <h2 class="portfolio-section-title">Grammar Language Analysis</h2>
+                    <div class="document-viewer">
+                        <iframe src="grammar_la.html" title="Grammar Analysis"></iframe>
+                        <a href="grammar_la.html" target="_blank" class="open-document-btn">Open in New Tab →</a>
+                    </div>
+                </section>
 
-.lesson-card img {
-    transition: transform 0.4s ease;
-}
+                <!-- FIXED: Added closing </iframe> tag here -->
+                <section id="vocab-la" class="portfolio-section">
+                    <h2 class="portfolio-section-title">Vocabulary Language Analysis</h2>
+                    <div class="document-viewer">
+                        <iframe src="vocab_la.html" title="Vocabulary Language Analysis"></iframe>
+                        <a href="vocab_la.html" target="_blank" class="open-document-btn">Open in New Tab →</a>
+                    </div>
+                </section>
 
-/* Subtle zoom effect on the image when hovering */
-.lesson-card:hover img {
-    transform: scale(1.05);
-}
+                <section id="learning-project" class="portfolio-section">
+                    <h2 class="portfolio-section-title">Self-Designed Learning Project</h2>
+                    <p class="section-intro" style="margin-bottom: 2rem;">Comprehensive documentation and structure of the self-designed learning project.</p>
+                    <div class="document-viewer">
+                        <iframe src="learning_project.html" title="Learning Project"></iframe>
+                        <a href="learning_project.html" target="_blank" class="open-document-btn">Open in New Tab →</a>
+                    </div>
+                </section>
 
-/* Slightly more lift on the whole card when hovering */
-.lesson-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-}
+                <section id="handout" class="portfolio-section">
+                    <h2 class="portfolio-section-title">Learning Project Handouts</h2>
+                    <p class="section-intro" style="margin-bottom: 2rem;">Visual materials and supplementary handouts designed for the learning project.</p>
+                    <div class="portfolio-gallery">
+                        <div class="gallery-item">
+                            <img src="handout.jpeg" alt="Handout Page 1">
+                            <a href="handout.jpeg" target="_blank" class="download-btn" download>View / Download ↓</a>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="handout2.jpeg" alt="Handout Page 2">
+                            <a href="handout2.jpeg" target="_blank" class="download-btn" download>View / Download ↓</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="event-design" class="portfolio-section">
+                    <h2 class="portfolio-section-title">Self-Designed Extra-Curriculum Event</h2>
+                    <p class="section-intro" style="margin-bottom: 2rem;">Comprehensive design materials, posters, and visual assets for the extra-curriculum event.</p>
+                    <div class="portfolio-gallery">
+                        <div class="gallery-item">
+                            <img src="event_design.jpeg" alt="Event Design Main">
+                            <a href="event_design.jpeg" target="_blank" class="download-btn" download>View / Download ↓</a>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="event2.jpeg" alt="Event Material 2">
+                            <a href="event2.jpeg" target="_blank" class="download-btn" download>View / Download ↓</a>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="event33.jpeg" alt="Event Material 33">
+                            <a href="event33.jpeg" target="_blank" class="download-btn" download>View / Download ↓</a>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="event3.jpeg" alt="Event Material 3">
+                            <a href="event3.jpeg" target="_blank" class="download-btn" download>View / Download ↓</a>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="event4.jpeg" alt="Event Material 4">
+                            <a href="event4.jpeg" target="_blank" class="download-btn" download>View / Download ↓</a>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="event5.jpeg" alt="Event Material 5">
+                            <a href="event5.jpeg" target="_blank" class="download-btn" download>View / Download ↓</a>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="event6.jpeg" alt="Event Material 6">
+                            <a href="event6.jpeg" target="_blank" class="download-btn" download>View / Download ↓</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="learner-analysis" class="portfolio-section">
+                    <h2 class="portfolio-section-title">Learner Analysis Assignment</h2>
+                    <div class="document-viewer">
+                        <iframe src="learner_analysis.html" title="Learner Analysis"></iframe>
+                        <a href="learner_analysis.html" target="_blank" class="open-document-btn">Open in New Tab →</a>
+                    </div>
+                </section>
+
+                <section id="practice-tasks" class="portfolio-section">
+                    <h2 class="portfolio-section-title">Language Practice Tasks (Controlled & Freer)</h2>
+                    <div class="document-viewer">
+                        <iframe src="practice_tasks.html" title="Practice Tasks"></iframe>
+                        <a href="practice_tasks.html" target="_blank" class="open-document-btn">Open in New Tab →</a>
+                    </div>
+                </section>
+
+                <section id="authentic-text" class="portfolio-section">
+                    <h2 class="portfolio-section-title">Activities for an Authentic Text</h2>
+                    <div class="document-viewer">
+                        <iframe src="authentic.html" title="Authentic Text Activities"></iframe>
+                        <a href="authentic.html" target="_blank" class="open-document-btn">Open in New Tab →</a>
+                    </div>
+                </section>
+
+                <section id="lesson-plan" class="portfolio-section">
+                    <h2 class="portfolio-section-title">Lesson Plan</h2>
+                    <div class="document-viewer">
+                        <iframe src="plan.html" title="Lesson Plan"></iframe>
+                        <a href="plan.html" target="_blank" class="open-document-btn">Open in New Tab →</a>
+                    </div>
+                </section>
+
+                <section id="guided-discovery" class="portfolio-section">
+                    <h2 class="portfolio-section-title">Guided Discovery Worksheet</h2>
+                    <div class="document-viewer">
+                        <iframe src="guided.html" title="Guided Discovery Worksheet"></iframe>
+                        <a href="guided.html" target="_blank" class="open-document-btn">Open in New Tab →</a>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- NEW: LESSON LIGHTBOX MODAL -->
+    <div id="lesson-modal" class="modal-overlay">
+        <div class="lesson-modal-container">
+            <button class="close-modal" id="close-lesson-modal">&times;</button>
+            <div class="lesson-modal-content">
+                <img id="lesson-modal-img" src="" alt="Lesson Image">
+                <h3 id="lesson-modal-title"></h3>
+                <p id="lesson-modal-desc"></p>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <!-- HOME SECTION -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="profile-container">
+                    <img src="anna-profile.jpg" alt="Anna Vorobyeva" class="profile-img">
+                </div>
+                <h1>Anna Vorobyeva</h1>
+                <p class="title">English is my passion</p>
+                <p class="subtitle">HSE University, Saint Petersburg</p>
+                <div class="credentials">
+                    <span>4 years of teaching</span>
+                    <span>•</span>
+                    <span>HSE language program</span>
+                    <span>•</span>
+                    <span>13 years of English study</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="lesson.jpg" alt="Teaching session">
+                    </div>
+                    <div class="about-text">
+                        <h3>Academic Background</h3>
+                        <p>I am currently pursuing my undergraduate degree at <strong>National Research University Higher School of Economics (HSE)</strong> in Saint Petersburg, Russia, in a bilingual Russian-English program. Concurrently, I am completing a minor in <em>"Language, Culture, and Intercultural Communication"</em> entirely in English, which will confer upon me the qualification of English Language Teacher.</p>
+                        <p>My academic journey in English language studies spans <strong>13 years</strong>, beginning with intensive coursework at the National University of Veliky Novgorod, where I progressed from B1 to C1 proficiency level.</p>
+
+                        <h3>Professional Experience</h3>
+                        <p>I have accumulated <strong>four years of teaching experience</strong> in both online and offline formats. My professional background includes serving as an English Language Curator at "EGELAND", an online school specializing in preparation for the Unified State Exam (EGE).</p>
+
+                        <h3>Achievements</h3>
+                        <ul class="achievements-list">
+                            <li>Graduated from secondary school with honors, specialsing in English Language Studies</li>
+                            <li>Scored 92/100 on the Unified State Exam in English (EGE), with maximum points in the speaking section</li>
+                            <li>Participated in two international language immersion programs, practicing with native speakers from Ghana and Nigeria</li>
+                            <li>Engaged in five years of private instruction with qualified tutors, including native speakers</li>
+                            <li>Currently studying Spanish language entirely through English instruction</li>
+                        </ul>
+
+                        <h3>Student Outcomes</h3>
+                        <p>My students have achieved notable success on the Unified State Exam, with scores including: <strong>98, 88, 78, and 73 points</strong>.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TEACHING PHILOSOPHY SECTION -->
+        <section id="philosophy" class="section alt-bg">
+            <div class="container">
+                <h2 class="section-title">Teaching Philosophy</h2>
+                <div class="philosophy-main-content">
+                    <h3 class="philosophy-main-title">Building bridges between languages, cultures, and human potential</h3>
+                    
+                    <p class="philosophy-intro"><strong>Introduction:</strong> This document articulates my core beliefs, values, and approaches as an English language educator. Grounded in both academic training and four years of practical tutoring experience, this philosophy outlines my commitment to learner-centered instruction, cultural bridge-building, and continuous professional growth. The following sections address my educational beliefs, professional goals, practical strategies, and concrete examples from my teaching journey.</p>
+
+                    <div class="philosophy-block">
+                        <h4>Core Beliefs</h4>
+                        <p>I believe that students learn best when instruction is personalized, interactive, and emotionally safe. Language acquisition, in particular, flourishes not through rote memorization but through meaningful communication, authentic materials, and low-anxiety environments where mistakes are celebrated as learning steps. My role as an educator is not to be a sage on the stage but a facilitator, a coach, and occasionally a fellow traveler on the language journey. My primary goals for students are threefold: to develop communicative competence, to gain confidence in using English authentically, and to cultivate curiosity about other cultures. My beliefs have been profoundly shaped by my 13-year experience of language learning and observing how my own students transformed when given personalized, authentic tasks rather than dry textbook exercises.</p>
+                    </div>
+
+                    <div class="philosophy-block">
+                        <h4>Educational Objectives</h4>
+                        <p>My educational objectives are to design lessons that respect individual learning styles, foster intrinsic motivation, and prepare students for real-world communication. I aim to create an inclusive environment where a child struggling with homework and an adult preparing for a business presentation feel equally supported. For my students, I hope they achieve not only exam success, but also genuine self-efficacy: the ability to navigate unfamiliar language situations independently, whether ordering coffee abroad or debating current events using foreign news articles. Beyond individual lessons, I envision my teaching practice as a small, mission-driven program whose vision is to build bridges between languages and cultures. My goals as an educational manager of my own tutoring business include maintaining small group sizes, investing in authentic materials over generic textbooks, and regularly seeking student feedback to keep my practice responsive rather than rigid.</p>
+                    </div>
+
+                    <div class="philosophy-block">
+                        <h4>Instructional Strategies</h4>
+                        <p>To achieve my goals, I employ instructional strategies rooted in communicative language teaching and task-based learning. I design lessons using authentic foreign articles, YouTube videos, and interactive platforms like Miro and Quizlet, ensuring that grammar and vocabulary emerge naturally from meaningful contexts rather than isolated drills. My assessment practices combine low-stakes formative checks, such as exit tickets, self-recorded speaking tasks, and peer feedback sessions, with summative mock exams that mirror EGE or IELTS formats. I use these assessments not to label students but to adjust my next lesson's focus, a practice I refined while mentoring in a large educational online school. As a manager of my own tutoring business, I will achieve my goals by implementing structured onboarding (diagnostic tests and learning style surveys) and regular professional development (attending webinars, observing peers).</p>
+                    </div>
+
+                    <div class="philosophy-block">
+                        <h4>Practical Application</h4>
+                        <p>One concrete example illustrating my approach involves an adult learner needing business English. Instead of a generic textbook, we analyzed authentic emails from her workplace, role-played video calls using Miro for collaborative note-taking, and studied intercultural communication. She later told me this helped her navigate a tense negotiation with a German partner. These outcomes have reinforced my belief that authenticity, personalization, and emotional safety are not luxuries but necessities.</p>
+                    </div>
+
+                    <div class="philosophy-block">
+                        <h4>Conclusion</h4>
+                        <p>My educational philosophy centers on building bridges: between teacher and student, between language and culture, and between effort and authentic communication. I remain committed to continuous learning, reflective practice, and the simple but profound belief that every student deserves to feel seen, heard, and capable in their language journey.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MY LESSONS SECTION -->
+        <section id="lessons" class="section">
+            <div class="container">
+                <h2 class="section-title">My Lessons</h2>
+                <p class="section-intro">A glimpse into the diverse materials and methodologies employed in my teaching practice</p>
+                
+                <div class="lessons-grid">
+                    <div class="lesson-card">
+                        <img src="vocab.jpg" alt="Vocabulary building exercises">
+                        <div class="lesson-info">
+                            <h3>Vocabulary development</h3>
+                            <p>Systematic approaches to lexical acquisition, including semantic mapping, collocation studies, and context-based learning strategies.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="lesson-card">
+                        <img src="movie.jpg" alt="Film-based learning">
+                        <div class="lesson-info">
+                            <h3>Authentic media analysis</h3>
+                            <p>Utilizing films and video content to develop listening comprehension, cultural understanding, and natural language patterns.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="lesson-card">
+                        <img src="cinema.jpg" alt="Cinema discussions">
+                        <div class="lesson-info">
+                            <h3>Critical discussion</h3>
+                            <p>Facilitating analytical conversations about cinema to enhance speaking fluency, critical thinking, and argumentation skills.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="lesson-card">
+                        <img src="articles.jpg" alt="Article analysis">
+                        <div class="lesson-info">
+                            <h3>Academic reading</h3>
+                            <p>Working with contemporary articles and scholarly texts to develop reading strategies, critical analysis, and academic vocabulary.</p>
+                        </div>
+                    </div>
+
+                    <div class="lesson-card">
+                        <img src="picture.jpeg" alt="Custom visual learning materials">
+                        <div class="lesson-info">
+                            <h3>Visual learning resources</h3>
+                            <p>Integrating custom visual aids and interactive materials to reinforce comprehension, stimulate engagement, and cater to diverse learning styles.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="methodology-section">
+                    <h3>Instructional Materials & Technology</h3>
+                    <p>My lessons incorporate a variety of resources and digital platforms to enhance learning:</p>
+                    <ul class="materials-list">
+                        <li>MTS Link – Virtual classroom platform</li>
+                        <li>Buildin AI – Individual workplace for each student</li>
+                        <li>Miro – Collaborative visual workspace</li>
+                        <li>Quizlet – Interactive flashcards and study games</li>
+                        <li>YouTube – Educational video content</li>
+                        <li>International textbooks and academic publications</li>
+                        <li>Contemporary news articles and media sources</li>
+                        <li>Custom-designed instructional materials</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="section alt-bg">
+            <div class="container">
+                <h2 class="section-title">Contact Information</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Get in Touch</h3>
+                        <p>For inquiries regarding tutoring services, academic collaboration, or professional opportunities, please feel free to contact me.</p>
+                        
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <strong>Email:</strong>
+                                <span>annavorobyeva115@icloud.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <strong>Location:</strong>
+                                <span>Saint Petersburg, Russia</span>
+                            </div> <!-- FIXED: Added missing closing div -->
+                        </div>
+
+                        <div class="social-links-container">
+                            <h4>Connect with me</h4>
+                            <div class="social-links">
+                                <a href="https://t.me/cherries222" target="_blank" class="social-link telegram">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" class="social-icon">
+                                        <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                                    </svg>
+                                    <span>Telegram</span>
+                                </a>
+                                <a href="https://vk.com/22cherry" target="_blank" class="social-link vk">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" class="social-icon">
+                                        <path d="M15.684 0H8.316C1.592 0 0 1.592 0 8.316v7.368C0 22.408 1.592 24 8.316 24h7.368C22.408 24 24 22.408 24 15.684V8.316C24 1.592 22.391 0 15.684 0zm3.692 17.123h-1.744c-.66 0-.864-.525-2.05-1.727-1.033-1-1.49-1.135-1.744-1.135-.356 0-.458.102-.458.593v1.575c0 .424-.135.678-1.253.678-1.846 0-3.896-1.118-5.335-3.202C4.624 10.857 4 8.673 4 8.231c0-.254.102-.491.593-.491h1.744c.44 0 .61.203.78.678.864 2.49 2.303 4.675 2.896 4.675.22 0 .322-.102.322-.66V9.721c-.068-1.186-.695-1.287-.695-1.71 0-.204.17-.407.44-.407h2.744c.373 0 .508.203.508.643v3.473c0 .372.17.508.271.508.22 0 .407-.136.813-.542 1.27-1.422 2.18-3.61 2.18-3.61.119-.254.322-.491.763-.491h1.744c.525 0 .644.27.525.643-.22 1.017-2.354 4.031-2.354 4.031-.186.305-.254.44 0 .78.186.254.796.779 1.203 1.253.745.847 1.32 1.558 1.473 2.05.17.49-.085.744-.576.744z"/>
+                                    </svg>
+                                    <span>VK</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="availability">
+                            <h4>Availability</h4>
+                            <p>Individual and group sessions available. Flexible scheduling to accommodate different time zones and academic commitments.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Anna Vorobyeva. All Rights Reserved.</p>
+        <p>English language educator</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // --- PORTFOLIO MODAL LOGIC ---
+        const portfolioBtn = document.getElementById('portfolio-btn');
+        const portfolioModal = document.getElementById('portfolio-modal');
+        const closePortfolio = document.getElementById('close-portfolio');
+        const portfolioLinks = document.querySelectorAll('.portfolio-link');
+        const portfolioSections = document.querySelectorAll('.portfolio-section');
+        const portfolioContent = document.querySelector('.portfolio-content');
+
+        portfolioBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            portfolioModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closePortfolio.addEventListener('click', () => {
+            portfolioModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        portfolioModal.addEventListener('click', (e) => {
+            if (e.target === portfolioModal) {
+                portfolioModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        portfolioLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                portfolioLinks.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+                
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                portfolioSections.forEach(section => {
+                    section.classList.remove('active');
+                });
+                
+                if (targetSection) {
+                    targetSection.classList.add('active');
+                    if (portfolioContent) {
+                        portfolioContent.scrollTop = 0;
+                    }
+                }
+            });
+        });
+
+        // --- NEW: LESSON LIGHTBOX LOGIC ---
+        const lessonCards = document.querySelectorAll('.lesson-card');
+        const lessonModal = document.getElementById('lesson-modal');
+        const closeLessonModal = document.getElementById('close-lesson-modal');
+        const lessonModalImg = document.getElementById('lesson-modal-img');
+        const lessonModalTitle = document.getElementById('lesson-modal-title');
+        const lessonModalDesc = document.getElementById('lesson-modal-desc');
+
+        lessonCards.forEach(card => {
+            card.style.cursor = 'pointer'; // Changes cursor to hand on hover
+            card.addEventListener('click', () => {
+                // Extract data from the clicked card
+                const imgSrc = card.querySelector('img').src;
+                const title = card.querySelector('h3').textContent;
+                const desc = card.querySelector('p').textContent;
+
+                // Populate the modal
+                lessonModalImg.src = imgSrc;
+                lessonModalTitle.textContent = title;
+                lessonModalDesc.textContent = desc;
+
+                // Open modal
+                lessonModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        closeLessonModal.addEventListener('click', () => {
+            lessonModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        lessonModal.addEventListener('click', (e) => {
+            if (e.target === lessonModal) {
+                lessonModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // --- GLOBAL ESCAPE KEY TO CLOSE ALL MODALS ---
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                if (portfolioModal.classList.contains('active')) {
+                    portfolioModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+                if (lessonModal.classList.contains('active')) {
+                    lessonModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
