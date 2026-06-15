@@ -19,12 +19,165 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#philosophy">Teaching Philosophy</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#" id="portfolio-btn">Portfolio</a></li>
                 <li><a href="#lessons">My Lessons</a></li>
                 <li><a href="#contact">Contacts</a></li>
             </ul>
         </nav>
     </header>
+
+    <!-- PORTFOLIO MODAL/OVERLAY -->
+    <div id="portfolio-modal" class="portfolio-modal">
+        <div class="portfolio-container">
+            <!-- Close Button -->
+            <button class="close-portfolio" id="close-portfolio">&times;</button>
+            
+            <!-- Portfolio Sidebar -->
+            <aside class="portfolio-sidebar">
+                <h2 class="portfolio-sidebar-title">Portfolio Contents</h2>
+                <nav class="portfolio-nav">
+                    <ul>
+                        <li><a href="#exec-summary" class="portfolio-link active">Executive Summary</a></li>
+                        <li><a href="#reflective-essay" class="portfolio-link">Reflective Essay</a></li>
+                        <li class="portfolio-submenu">
+                            <span class="submenu-header">Language Analyses</span>
+                            <ul>
+                                <li><a href="#grammar-la" class="portfolio-link">Grammar Analysis</a></li>
+                                <li><a href="#vocab-la" class="portfolio-link">Vocabulary Analysis</a></li>
+                            </ul>
+                        </li>
+                        <li class="portfolio-submenu">
+                            <span class="submenu-header">Self-Designed Projects</span>
+                            <ul>
+                                <li><a href="#learning-project" class="portfolio-link">Learning Project</a></li>
+                                <li><a href="#handout" class="portfolio-link">Project Handout</a></li>
+                                <li><a href="#event-design" class="portfolio-link">Extra-Curriculum Event</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#learner-analysis" class="portfolio-link">Learner Analysis</a></li>
+                        <li><a href="#practice-tasks" class="portfolio-link">Language Practice Tasks</a></li>
+                        <li><a href="#authentic-text" class="portfolio-link">Authentic Text Activities</a></li>
+                        <li><a href="#lesson-plan" class="portfolio-link">Lesson Plan</a></li>
+                        <li><a href="#guided-discovery" class="portfolio-link">Guided Discovery Worksheet</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- Portfolio Content Area -->
+            <main class="portfolio-content">
+                <!-- Executive Summary -->
+                <section id="exec-summary" class="portfolio-section active">
+                    <h2 class="portfolio-section-title">Executive Summary</h2>
+                    <div class="executive-summary-content">
+                        <p>This portfolio serves as a comprehensive record of my development as an English language teacher, offering insight into my growing expertise, pedagogical skills, and dedication to fostering meaningful learning experiences for students of all ages and proficiency levels.</p>
+                        
+                        <p>The portfolio brings together reflective essays, language analyses, self-designed projects, learner profiles, language practice tasks, presentation materials, and lesson plans. Together, these documents illustrate my analytical approach to language teaching, my creativity in designing engaging tasks, and my ability to adapt methods to diverse learners—from school students preparing for state exams to adults pursuing conversational, academic, or business English.</p>
+                        
+                        <p>Above all, this collection reflects my ongoing commitment to professional growth and my passion for creating a supportive, rich learning environment where students feel motivated to achieve their goals.</p>
+                    </div>
+                </section>
+
+                <!-- Reflective Essay -->
+                <section id="reflective-essay" class="portfolio-section">
+                    <h2 class="portfolio-section-title">Reflective Essay</h2>
+                    <div class="document-viewer">
+                        <iframe src="essay.html" title="Reflective Essay"></iframe>
+                        <a href="essay.html" target="_blank" class="open-document-btn">Open in New Tab →</a>
+                    </div>
+                </section>
+
+                <!-- Grammar Language Analysis -->
+                <section id="grammar-la" class="portfolio-section">
+                    <h2 class="portfolio-section-title">Grammar Language Analysis</h2>
+                    <div class="document-viewer">
+                        <iframe src="grammar_la.html" title="Grammar Analysis"></iframe>
+                        <a href="grammar_la.html" target="_blank" class="open-document-btn">Open in New Tab →</a>
+                    </div>
+                </section>
+
+                <!-- Vocabulary Language Analysis -->
+                <section id="vocab-la" class="portfolio-section">
+                    <h2 class="portfolio-section-title">Vocabulary Language Analysis</h2>
+                    <div class="image-document">
+                        <img src="vocab.jpg" alt="Vocabulary Language Analysis">
+                        <a href="vocab.jpg" target="_blank" class="download-btn" download>Download Image ↓</a>
+                    </div>
+                </section>
+
+                <!-- Learning Project -->
+                <section id="learning-project" class="portfolio-section">
+                    <h2 class="portfolio-section-title">Self-Designed Learning Project</h2>
+                    <div class="document-viewer">
+                        <iframe src="learning_project.html" title="Learning Project"></iframe>
+                        <a href="learning_project.html" target="_blank" class="open-document-btn">Open in New Tab →</a>
+                    </div>
+                </section>
+
+                <!-- Project Handout -->
+                <section id="handout" class="portfolio-section">
+                    <h2 class="portfolio-section-title">Learning Project Handout</h2>
+                    <div class="image-document">
+                        <img src="handout.jpeg" alt="Learning Project Handout">
+                        <a href="handout.jpeg" target="_blank" class="download-btn" download>Download Image ↓</a>
+                    </div>
+                </section>
+
+                <!-- Extra-Curriculum Event -->
+                <section id="event-design" class="portfolio-section">
+                    <h2 class="portfolio-section-title">Self-Designed Extra-Curriculum Event</h2>
+                    <div class="image-document">
+                        <img src="event_design.jpeg" alt="Extra-Curriculum Event Design">
+                        <a href="event_design.jpeg" target="_blank" class="download-btn" download>Download Image ↓</a>
+                    </div>
+                </section>
+
+                <!-- Learner Analysis -->
+                <section id="learner-analysis" class="portfolio-section">
+                    <h2 class="portfolio-section-title">Learner Analysis Assignment</h2>
+                    <div class="document-viewer">
+                        <iframe src="learner_analysis.html" title="Learner Analysis"></iframe>
+                        <a href="learner_analysis.html" target="_blank" class="open-document-btn">Open in New Tab →</a>
+                    </div>
+                </section>
+
+                <!-- Practice Tasks -->
+                <section id="practice-tasks" class="portfolio-section">
+                    <h2 class="portfolio-section-title">Language Practice Tasks (Controlled & Freer)</h2>
+                    <div class="document-viewer">
+                        <iframe src="practice_tasks.html" title="Practice Tasks"></iframe>
+                        <a href="practice_tasks.html" target="_blank" class="open-document-btn">Open in New Tab →</a>
+                    </div>
+                </section>
+
+                <!-- Authentic Text Activities -->
+                <section id="authentic-text" class="portfolio-section">
+                    <h2 class="portfolio-section-title">Activities for an Authentic Text</h2>
+                    <div class="document-viewer">
+                        <iframe src="authentic.html" title="Authentic Text Activities"></iframe>
+                        <a href="authentic.html" target="_blank" class="open-document-btn">Open in New Tab →</a>
+                    </div>
+                </section>
+
+                <!-- Lesson Plan -->
+                <section id="lesson-plan" class="portfolio-section">
+                    <h2 class="portfolio-section-title">Lesson Plan</h2>
+                    <div class="document-viewer">
+                        <iframe src="plan.html" title="Lesson Plan"></iframe>
+                        <a href="plan.html" target="_blank" class="open-document-btn">Open in New Tab →</a>
+                    </div>
+                </section>
+
+                <!-- Guided Discovery Worksheet -->
+                <section id="guided-discovery" class="portfolio-section">
+                    <h2 class="portfolio-section-title">Guided Discovery Worksheet</h2>
+                    <div class="document-viewer">
+                        <iframe src="guided.html" title="Guided Discovery Worksheet"></iframe>
+                        <a href="guided.html" target="_blank" class="open-document-btn">Open in New Tab →</a>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
 
     <main>
         <!-- HOME SECTION -->
@@ -111,42 +264,8 @@
             </div>
         </section>
 
-        <!-- PORTFOLIO SECTION -->
-        <section id="portfolio" class="section">
-            <div class="container">
-                <h2 class="section-title">Portfolio & Testimonials</h2>
-                <div class="portfolio-content">
-                    <div class="reviews-container">
-                        <img src="reviews.JPG" alt="Student Reviews" class="reviews-img">
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>Professional Credentials</h3>
-                        <ul class="credentials-list">
-                            <li><strong>Education:</strong> HSE University, Saint Petersburg (Expected graduation: 2027)</li>
-                            <li><strong>Qualification:</strong> English Language Teacher (in progress)</li>
-                            <li><strong>Language Proficiency:</strong> C1+ (CEFR)</li>
-                            <li><strong>Teaching Experience:</strong> 4 years</li>
-                            <li><strong>Specializations:</strong> Exam Preparation (EGE/OGE), Academic English, Business English, Conversational English</li>
-                        </ul>
-
-                        <h3>Areas of Expertise</h3>
-                        <div class="expertise-tags">
-                            <span>Exam Preparation</span>
-                            <span>Academic Writing</span>
-                            <span>Business Communication</span>
-                            <span>Pronunciation</span>
-                            <span>Grammar & Syntax</span>
-                            <span>Vocabulary Development</span>
-                            <span>Reading Comprehension</span>
-                            <span>Listening Skills</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- MY LESSONS SECTION -->
-        <section id="lessons" class="section alt-bg">
+        <section id="lessons" class="section">
             <div class="container">
                 <h2 class="section-title">My Lessons</h2>
                 <p class="section-intro">A glimpse into the diverse materials and methodologies employed in my teaching practice</p>
@@ -203,7 +322,7 @@
         </section>
 
         <!-- CONTACT SECTION -->
-        <section id="contact" class="section">
+        <section id="contact" class="section alt-bg">
             <div class="container">
                 <h2 class="section-title">Contact Information</h2>
                 <div class="contact-content">
@@ -241,6 +360,68 @@
         <p>&copy; 2026 Anna Vorobyeva. All Rights Reserved.</p>
         <p>English Language Educator | HSE University</p>
     </footer>
+
+    <!-- Portfolio JavaScript -->
+    <script>
+        // Portfolio Modal Functionality
+        const portfolioBtn = document.getElementById('portfolio-btn');
+        const portfolioModal = document.getElementById('portfolio-modal');
+        const closePortfolio = document.getElementById('close-portfolio');
+        const portfolioLinks = document.querySelectorAll('.portfolio-link');
+
+        // Open Portfolio
+        portfolioBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            portfolioModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        // Close Portfolio
+        closePortfolio.addEventListener('click', () => {
+            portfolioModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close on outside click
+        portfolioModal.addEventListener('click', (e) => {
+            if (e.target === portfolioModal) {
+                portfolioModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Active Link Management
+        portfolioLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                // Remove active class from all links
+                portfolioLinks.forEach(l => l.classList.remove('active'));
+                // Add active class to clicked link
+                this.classList.add('active');
+            });
+        });
+
+        // Smooth scrolling within portfolio
+        document.querySelectorAll('.portfolio-nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && portfolioModal.classList.contains('active')) {
+                portfolioModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
 
 </body>
 </html>
