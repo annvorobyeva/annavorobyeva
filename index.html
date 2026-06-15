@@ -95,34 +95,36 @@
                     </div>
                 </section>
 
-                <!-- LEARNING PROJECT -->
-                <section id="learning-project" class="portfolio-section">
-                    <h2 class="portfolio-section-title">Self-Designed Learning Project</h2>
-                    <p class="section-intro" style="margin-bottom: 2rem;">Comprehensive documentation and structure of the self-designed learning project.</p>
-                    <div class="document-viewer">
-                        <!-- Ensure the file is named exactly learning_project.html (all lowercase, with .html) -->
-                        <iframe src="learning_project.html" title="Learning Project" onerror="this.style.display='none'"></iframe>
-                        <a href="learning_project.html" target="_blank" class="open-document-btn">Open Project in New Tab →</a>
-                    </div>
-                </section>
+                <!-- LEARNING PROJECT (Single HTML File) -->
+<section id="learning-project" class="portfolio-section">
+    <h2 class="portfolio-section-title">Self-Designed Learning Project</h2>
+    <p class="section-intro" style="margin-bottom: 2rem;">Comprehensive documentation and structure of the self-designed learning project.</p>
+    <div class="document-viewer">
+        <iframe src="learning_project.html" title="Learning Project" onerror="console.log('Iframe failed to load')"></iframe>
+        <a href="learning_project.html" target="_blank" class="open-document-btn">Open in New Tab →</a>
+    </div>
+    <!-- Fallback if iframe doesn't work -->
+    <div style="margin-top: 2rem; text-align: center;">
+        <p style="color: var(--text-light); margin-bottom: 1rem;">If the document above doesn't display properly:</p>
+        <a href="learning_project.html" target="_blank" class="btn-primary">View Full Document</a>
+    </div>
+</section>
 
-                <!-- HANDOUTS -->
-                <section id="handout" class="portfolio-section">
-                    <h2 class="portfolio-section-title">Learning Project Handouts</h2>
-                    <p class="section-intro" style="margin-bottom: 2rem;">Visual materials and supplementary handouts designed for the learning project.</p>
-                    <div class="portfolio-gallery">
-                        <div class="gallery-item">
-                            <img src="handout.jpeg" alt="Handout Page 1">
-                            <a href="handout.jpeg" target="_blank" class="download-btn" download>View / Download ↓</a>
-                        </div>
-                        <div class="gallery-item">
-                            <!-- CRITICAL: Check your exact file name. Is it handout2.jpeg, handout2.jpg, or handout2_jpeg? -->
-                            <!-- I have provided the most common correct version below. Change it if your file is different. -->
-                            <img src="handout2.jpeg" alt="Handout Page 2">
-                            <a href="handout2.jpeg" target="_blank" class="download-btn" download>View / Download ↓</a>
-                        </div>
-                    </div>
-                </section>
+                <!-- HANDOUTS (Multiple Images Grouped) -->
+<section id="handout" class="portfolio-section">
+    <h2 class="portfolio-section-title">Learning Project Handouts</h2>
+    <p class="section-intro" style="margin-bottom: 2rem;">Visual materials and supplementary handouts designed for the learning project.</p>
+    <div class="portfolio-gallery">
+        <div class="gallery-item">
+            <img src="handout.jpeg" alt="Handout Page 1" onerror="this.src='handout.jpg'; console.log('Trying handout.jpg')">
+            <a href="handout.jpeg" target="_blank" class="download-btn" download>View / Download ↓</a>
+        </div>
+        <div class="gallery-item">
+            <img src="handout2_jpeg" alt="Handout Page 2" onerror="this.src='handout2.jpeg'; console.log('Trying handout2.jpeg')">
+            <a href="handout2_jpeg" target="_blank" class="download-btn" download>View / Download ↓</a>
+        </div>
+    </div>
+</section>
 
                 <!-- EXTRA-CURRICULUM EVENT (Multiple Images Grouped) -->
                 <section id="event-design" class="portfolio-section">
