@@ -165,12 +165,13 @@ header {
     transform: rotate(90deg);
 }
 
+/* FIXED: Sidebar scrolling and padding */
 .portfolio-sidebar {
     background: var(--sidebar-bg);
     border-right: 2px solid var(--border-color);
     overflow-y: auto;
-    height: 100%; /* CRITICAL: Ensures it fills the container height for proper scrolling calculation */
-    padding: 2.5rem 1.5rem 3.5rem 1.5rem; /* Extra bottom padding ensures the last item isn't clipped */
+    height: 100%;
+    padding: 2.5rem 1.5rem 4rem 1.5rem; /* Extra bottom padding prevents clipping */
 }
 
 .portfolio-sidebar-title {
@@ -311,7 +312,6 @@ header {
     box-shadow: 0 4px 12px rgba(139, 111, 78, 0.3);
 }
 
-/* Portfolio Gallery (For multiple images) */
 .portfolio-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -404,14 +404,14 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 120px; /* Increased to push content below the fixed navbar */
+    padding-top: 120px;
     background: linear-gradient(135deg, var(--primary-bg) 0%, var(--alt-bg) 100%);
 }
 
 .hero-content {
     text-align: center;
     max-width: 800px;
-    margin-top: 2rem; /* Extra push down to ensure nothing hides behind the nav */
+    margin-top: 2rem;
 }
 
 .profile-container {
@@ -419,17 +419,13 @@ header {
 }
 
 .profile-img {
-    width: 400px; /* Made wider */
-    height: 480px; /* Made taller for a portrait rectangle */
+    width: 400px;
+    height: 480px;
     object-fit: cover;
-    border-radius: 24px; /* Smooth, modern rounded corners instead of a circle */
-    border: none; /* Removed the hard border */
-    
-    /* Fades the bottom 25% of the image smoothly into the background */
+    border-radius: 24px;
+    border: none;
     -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
     mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
-    
-    /* Soft, elegant shadow to give it depth without harsh lines */
     box-shadow: 0 20px 40px rgba(139, 111, 78, 0.12);
 }
 
@@ -476,20 +472,19 @@ header {
 /* --- 6. ABOUT SECTION --- */
 .about-content {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    /* FIXED: Fixed width for image column ensures it stays a good size and perfectly on the left */
+    grid-template-columns: 380px 1fr; 
     gap: 4rem;
-    align-items: start;
+    align-items: start; /* Ensures image aligns with the very top of the text */
 }
 
-/* UPDATED: Restricts size and centers the image so it doesn't take up the whole screen */
 .about-image {
-    max-width: 380px; /* Prevents the image from getting too large */
     width: 100%;
-    margin: 0 auto; /* Centers the image in its column */
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 8px 25px rgba(0,0,0,0.1);
     border: 1px solid var(--border-color);
+    /* Removed margin: 0 auto so it stays flush left */
 }
 
 .about-image img {
@@ -522,6 +517,7 @@ header {
     text-align: justify;
     font-size: 1.05rem;
 }
+
 /* Student Outcomes with Image */
 .student-outcomes-content {
     display: grid;
@@ -614,7 +610,7 @@ header {
     text-align: justify;
 }
 
-/* --- 8. MY LESSONS SECTION (Standard Grid) --- */
+/* --- 8. MY LESSONS SECTION --- */
 .lessons-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -851,6 +847,7 @@ footer p {
 }
 
 /* --- 11. RESPONSIVE DESIGN --- */
+/* FIXED: Removed the stray closing brace that was breaking the layout */
 @media (max-width: 900px) {
     .portfolio-container {
         grid-template-columns: 1fr;
@@ -858,8 +855,22 @@ footer p {
         height: 90vh;
     }
     
-    /* ... existing styles ... */
+    .portfolio-sidebar {
+        border-right: none;
+        border-bottom: 2px solid var(--border-color);
+        max-height: 250px;
+    }
     
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .about-image {
+        max-width: 350px;
+        margin: 0 auto 2rem auto; /* Centered only on mobile */
+    }
+
     .student-outcomes-content {
         grid-template-columns: 1fr;
         gap: 1.5rem;
@@ -869,22 +880,16 @@ footer p {
         max-width: 400px;
         margin: 0 auto;
     }
-}
-    .portfolio-sidebar {
-        border-right: none;
-        border-bottom: 2px solid var(--border-color);
-        max-height: 250px;
-    }
-    .about-content {
-        grid-template-columns: 1fr;
-    }
+    
     .materials-list {
         grid-template-columns: 1fr;
     }
+    
     .navbar {
         flex-direction: column;
         gap: 1rem;
     }
+    
     .nav-links {
         flex-wrap: wrap;
         justify-content: center;
@@ -902,22 +907,21 @@ footer p {
     .hero h1 {
         font-size: 2.5rem;
     }
-    /* ... (leave other styles in this block alone) ... */
     
     .profile-img {
-        width: 300px; /* Scaled down width for mobile */
-        height: 380px; /* Scaled down height for mobile */
+        width: 300px;
+        height: 380px;
     }
     
-    /* ... (leave other styles in this block alone) ... */
-    }
     .credentials {
         flex-direction: column;
         gap: 0.5rem;
     }
+    
     .section {
         padding: 4rem 1.5rem;
     }
+    
     .document-viewer iframe {
         height: 50vh;
     }
