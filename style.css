@@ -169,7 +169,8 @@ header {
     background: var(--sidebar-bg);
     border-right: 2px solid var(--border-color);
     overflow-y: auto;
-    padding: 3rem 1.5rem;
+    height: 100%; /* CRITICAL: Ensures it fills the container height for proper scrolling calculation */
+    padding: 2.5rem 1.5rem 3.5rem 1.5rem; /* Extra bottom padding ensures the last item isn't clipped */
 }
 
 .portfolio-sidebar-title {
@@ -480,8 +481,11 @@ header {
     align-items: start;
 }
 
-/* UPDATED: Matches the reviews.jpg styling perfectly */
+/* UPDATED: Restricts size and centers the image so it doesn't take up the whole screen */
 .about-image {
+    max-width: 380px; /* Prevents the image from getting too large */
+    width: 100%;
+    margin: 0 auto; /* Centers the image in its column */
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 8px 25px rgba(0,0,0,0.1);
@@ -489,7 +493,7 @@ header {
 }
 
 .about-image img {
-    width: 50%;
+    width: 100%;
     height: auto;
     display: block;
     transition: transform 0.3s ease;
@@ -517,26 +521,6 @@ header {
     margin-bottom: 1.5rem;
     text-align: justify;
     font-size: 1.05rem;
-}
-
-.achievements-list {
-    list-style: none;
-    margin: 1.5rem 0;
-}
-
-.achievements-list li {
-    padding-left: 2rem;
-    position: relative;
-    margin-bottom: 1rem;
-    font-size: 1.05rem;
-}
-
-.achievements-list li::before {
-    content: "—";
-    position: absolute;
-    left: 0;
-    color: var(--accent-deep);
-    font-weight: 600;
 }
 /* Student Outcomes with Image */
 .student-outcomes-content {
@@ -939,24 +923,20 @@ footer p {
     }
 }
 
-/* Custom Scrollbar for Portfolio */
-.portfolio-sidebar::-webkit-scrollbar,
-.portfolio-content::-webkit-scrollbar {
+/* Custom Scrollbar for Portfolio Sidebar */
+.portfolio-sidebar::-webkit-scrollbar {
     width: 8px;
 }
 
-.portfolio-sidebar::-webkit-scrollbar-track,
-.portfolio-content::-webkit-scrollbar-track {
-    background: var(--primary-bg);
+.portfolio-sidebar::-webkit-scrollbar-track {
+    background: transparent;
 }
 
-.portfolio-sidebar::-webkit-scrollbar-thumb,
-.portfolio-content::-webkit-scrollbar-thumb {
+.portfolio-sidebar::-webkit-scrollbar-thumb {
     background: var(--border-color);
     border-radius: 4px;
 }
 
-.portfolio-sidebar::-webkit-scrollbar-thumb:hover,
-.portfolio-content::-webkit-scrollbar-thumb:hover {
+.portfolio-sidebar::-webkit-scrollbar-thumb:hover {
     background: var(--accent-deep);
 }
